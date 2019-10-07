@@ -1,0 +1,12 @@
+.background{
+    background:url('../img/family-1.jpg') no-repeat center center;
+    background-size:cover;
+    height: 70vh;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+.product-item{
+    width: 20%!important;
+}

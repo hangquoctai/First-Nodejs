@@ -1,0 +1,19 @@
+extends ../layouts/common
+block content
+    h1 Create User
+
+    if errors
+        each error in errors
+            .alert.alert-danger= error
+    form(action="/users/create", method="POST",class="", enctype='multipart/form-data')
+        .d-flex
+            input.mr-5(placeholder="Your name",name="name", type="text",class="form-control mt-3",value=values ? values.name : '')
+            input.mr-5(placeholder="Your age",name="age",type="text",class="form-control mt-3",value=values ? values.age : '')
+            input(placeholder="Male/Female",name="sex",type="text",class="form-control mt-3",value=values ? values.sex : '')
+        input(placeholder="Your phone",name="phone",type="text",class="form-control mt-3",value=values ? values.phone : '')
+        input(placeholder="Your mail",name="mail",type="text",class="form-control mt-3",value=values ? values.mail : '')
+        input(placeholder="Your address",name="address",type="text",class="form-control mt-3",value=values ? values.address : '')
+        input(placeholder="Your password",name="password",type="password",class="form-control mt-3",value=values ? values.address : '')
+        input.mt-3(name='avatar',type='file')
+        br
+        button(class="btn btn-primary mt-3") Create

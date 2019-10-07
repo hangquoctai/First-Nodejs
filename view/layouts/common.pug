@@ -1,0 +1,24 @@
+html
+    head
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+        link(rel="stylesheet",href="/style/style.css")
+    body
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+            a(class="navbar-brand" href="/") T's Family
+            #navbarNav.collapse.navbar-collapse
+                ul.navbar-nav
+                    li.nav-item
+                        a.nav-link(href='/users/create') CreateUser
+                    li.nav-item.active
+                        a.nav-link(href='/users') ListUser
+                    li.nav-item
+                        a.nav-link(href='/products/product') Product
+                    li.nav-item
+                    - var count=0;
+                    - if (items) 
+                        each item in items
+                            - count++
+                    a.nav-link(href='/cart') Cart (!{count})
+            p=user?`Hello, ${user.name}`:''
+        .container.pt-3
+            block content
